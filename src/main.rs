@@ -43,19 +43,7 @@ fn main() {
 
     let help_flag = args.iter().position(|x| x == "--help");
 
-    if help_flag.is_some() {
-        println!("Usage: {} <number>", args[0]);
-        println!("Usage: {} <number> --a <float>", args[0]);
-        println!("Usage: {} <number> --f <file_name>", args[0]);
-        println!("Usage: {} <number> --j", args[0]);
-        println!(
-            "Usage: {} <number> --a <float> --f <file_name> --j",
-            args[0]
-        );
-        return;
-    }
-
-    if args.len() < 2 {
+    if help_flag.is_some() || args.len() < 2 {
         println!("Usage: {} <number>", args[0]);
         println!("Usage: {} <number> --a <float>", args[0]);
         println!("Usage: {} <number> --f <file_name>", args[0]);
