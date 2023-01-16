@@ -33,10 +33,18 @@ fn main() {
 
     if args.len() < 2 {
         println!("Usage: {} <number>", args[0]);
+        println!("Usage: {} <number> --a <float>", args[0]);
         return;
     }
 
     let number = args[1].parse::<u8>().unwrap();
+
+    let alpha_flag = args.iter().position(|x| x == "--a");
+
+    let alpha = match alpha_flag {
+        Some(_) => args[alpha_flag.unwrap() + 1].parse::<f32>().unwrap(),
+        None => 1.0,
+    };
 
     let mut colors: Vec<RGB> = vec![];
 
@@ -50,7 +58,7 @@ fn main() {
         println!("Hex: {}", color.to_hex());
         println!("Hex short: {}", color.to_hex_short());
         println!("RGB: {}", color.to_rgb());
-        println!("RGBA: {}", color.to_rgba(0.5));
+        println!("RGBA: {}", color.to_rgba(alpha));
         println!();
     }
 }

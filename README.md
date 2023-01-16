@@ -12,10 +12,16 @@ cargo build --release
 cargo run --release <number>
 ```
 
+### Help
+
+```bash
+cargo run --release
+```
+
 ### Example response
 
 ```bash
-cargo run --release 10
+cargo run --release 10 --a 0.5
 ```
 
 ```bash
