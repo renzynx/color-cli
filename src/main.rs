@@ -31,6 +31,14 @@ impl RGB {
 fn main() {
     let args: Vec<String> = std::env::args().collect();
 
+    let help_flag = args.iter().position(|x| x == "--help");
+
+    if help_flag.is_some() {
+        println!("Usage: {} <number>", args[0]);
+        println!("Usage: {} <number> --a <float>", args[0]);
+        return;
+    }
+
     if args.len() < 2 {
         println!("Usage: {} <number>", args[0]);
         println!("Usage: {} <number> --a <float>", args[0]);

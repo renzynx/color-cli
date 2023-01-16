@@ -15,7 +15,7 @@ cargo run --release <number>
 ### Help
 
 ```bash
-cargo run --release
+./target/release/color-cli --help
 ```
 
 ### Example response
